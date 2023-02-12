@@ -14,9 +14,9 @@
   --clr-primary-bright-orange: hsl(31, 77%, 52%);
   --clr-primary-dark-cyan: hsl(184, 100%, 22%);
   --clr-primary-very-dark-cyan: hsl(179, 100%, 13%);
-  --clr-neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-transparent-white: hsla(0, 0%, 100%, 0.568);
   --clr-neutral-very-light-gray: hsl(0, 0%, 95%);
-  --ff-BSDB: 'BigShouldersDisplay-Bold', cursive;
+  --ff-BSDB: 'BigShouldersDisplay-Bold';
   --ff-LDR: 'LexendDeca-Regular', sans-serif;
 }
 /* 
@@ -80,8 +80,12 @@ body {
   color: var(--clr-neutral-transparent-white);
   background-color: var(--clr-neutral-very-light-gray);
   display: grid;
-  place-content: center;
   margin: 1rem;
+}
+@media (min-width: 426px) {
+  body {
+    place-content: center;
+  }
 }
 .sedan {
   background-color: var(--clr-primary-bright-orange);
@@ -95,11 +99,32 @@ body {
   border-radius: 0 0 .5rem .5rem;
 }
 .products {
-  --products-padding: 2rem;
-  --content-spacing: .2rem;
+  --products-padding: 2.1rem 3.7rem;
+  --content-spacing: 2rem;
   display: grid;
   overflow: hidden;
   max-width: 600px;
+}
+@media (min-width: 1000px) {
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 980px;
+  }
+  .sedan {
+    border-radius: .5rem 0 0 .5rem;
+  }
+  .luxury {
+    border-radius: 0 .5rem .5rem 0;
+  }
+  .btn {
+    width: 70%;
+  }
+  .btn:hover {
+    cursor: pointer;
+    border: 2px var(--clr-neutral-transparent-white) solid;
+    background-color: transparent;
+    color: var(--clr-neutral-transparent-white) !important;
+  }
 }
 .product__item {
   display: grid;
@@ -109,6 +134,30 @@ body {
 .product__title {
   font-family: var(--ff-BSDB);
   text-transform: uppercase;
+  font-size: 2.6rem;
+  color: var(--clr-neutral-very-light-gray);
+  letter-spacing: 1px;
+}
+.product__discription {
+  color: var(--clr-neutral-transparent-white);
+}
+/* ? transporent color for text? how do it ? */
+.btn {
+  width: 60%;
+  padding: .6rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 2em;
+  border: 2px transparent solid;
+}
+.product__item:nth-child(1) .btn{
+  color: var(--clr-primary-bright-orange);
+}
+.product__item:nth-child(2) .btn{
+  color: var(--clr-primary-dark-cyan);
+}
+.product__item:nth-child(3) .btn{
+  color: var(--clr-primary-very-dark-cyan);
 }
 /* ? custom style end*/
 
