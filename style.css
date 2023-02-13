@@ -146,8 +146,10 @@ body {
   width: 60%;
   padding: .6rem;
   text-decoration: none;
+  text-align: center;
   border: none;
   border-radius: 2em;
+  background-color: var(--clr-neutral-transparent-white);
   border: 2px transparent solid;
 }
 .product__item:nth-child(1) .btn{
