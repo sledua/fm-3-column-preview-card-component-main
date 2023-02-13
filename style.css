@@ -3,12 +3,14 @@
   src: url('./assets/font/Big_Shoulders_Display/static/BigShouldersDisplay-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
 }
 @font-face {
   font-family: 'LexendDeca-Regular';
   src: url('./assets/font/Lexend_Deca/static/LexendDeca-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 :root {
   --clr-primary-bright-orange: hsl(31, 77%, 52%);
@@ -125,6 +127,10 @@ body {
     background-color: transparent;
     color: var(--clr-neutral-transparent-white) !important;
   }
+}
+.product__img > img{
+  width: 4rem;
+  height: 2.5rem;
 }
 .product__item {
   display: grid;
